@@ -1,0 +1,53 @@
+---
+- hosts: "localhost"
+  gather_facts: no
+  tasks:
+  - include_vars: "{{ playbook_dir }}/../vars.yml"
+  - name: Add host from variable file
+    add_host:
+      groups: linux
+      hostname: "{{ server_ip }}"
+      ansible_user: "{{ ssh_user }}"
+
+- hosts: linux
+  become: true
+  pre_tasks:
+  - name: Update and Upgrade
+    apt:
+      update_cache: yes
+      upgrade: 'yes'
+
+  tasks:
+  - include_vars: "{{ playbook_dir }}/../vars.yml"
+  - name: Install packages
+    package:
+      name:
+        - git
+        - htop
+        - vim
+        - curl
+        - net-tools
+        - telnet
+        - tree
+        - docker
+        - docker-compose
+
+  - name: Create the uptime-kuma directory
+    ansible.builtin.file:
+      path: /opt/uptime-kuma
+      state: directory
+      mode: '0755'
+
+  - name: Copy Docker-Compose file
+    ansible.builtin.copy:
+      src: "{{ playbook_dir }}/../uptime-kuma/docker-compose.yml"
+      dest: /opt/uptime-kuma
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+
+  - name: Start uptime-kuma
+    docker_compose:
+      project_src: /opt/uptime-kuma
+      recreate: always
