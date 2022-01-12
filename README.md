@@ -11,8 +11,6 @@ Uptime-Kuma is a open source, lightweight (but powerful), self-hosted monitoring
 
 ## Prerequisites. 
 
-# Prerequisite:
-
 Install [sshpass](https://linux.die.net/man/1/sshpass) and [Ansible](https://www.ansible.com/).
 
 Ubuntu:
