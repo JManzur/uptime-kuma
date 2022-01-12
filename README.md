@@ -39,11 +39,11 @@ brew install hudochenkov/sshpass/sshpass
     ```bash
     chmod +x install.sh
     ```
-4. Run it.
+5. Run it.
     ```bash
     ./install.sh
     ```
-5. Go to: http://YourServerIP:3001
+6. Go to: http://YourServerIP:3001
 
 ## Author:
 
