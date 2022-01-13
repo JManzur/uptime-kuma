@@ -8,6 +8,7 @@
       groups: linux
       hostname: "{{ server_ip }}"
       ansible_user: "{{ ssh_user }}"
+      ansible_python_interpreter: "/usr/bin/python3"
 
 - hosts: linux
   become: true
