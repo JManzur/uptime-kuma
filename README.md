@@ -3,6 +3,22 @@
 
 Uptime-Kuma is a open source, lightweight (but powerful), self-hosted monitoring tool. 
 
+![App Screenshot](images/jmanzur_uptime_kuma.png)
+
+### **Features:**
+
+- Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / Ping / DNS Record / Push / Steam Game Server.
+
+> 💡 Push Monitoring exposes an API endpoint that you can send a GET request to, and this is one of the most powerful features of uptime kuma.
+
+- Fancy, Reactive, Fast UI/UX.
+- Notifications via Telegram, Microsoft Team, Discord, Gotify, Slack, Pushover, Email (SMTP), and 70+ notification services, [click here for the full list.](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)
+- 20 second intervals.
+- [Multi Languages](https://github.com/louislam/uptime-kuma/tree/master/src/languages)
+- Simple Status Page
+- Ping Chart
+- Certificate Info
+
 ## Tested with: 
 
 | Environment | Application | Version  |
