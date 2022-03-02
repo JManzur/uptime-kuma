@@ -61,7 +61,7 @@ brew install hudochenkov/sshpass/sshpass
 
 ## Author:
 
-- [@JManzur](https://jmanzur.com.ar)
+- [@JManzur](https://jmanzur.com)
 
 ## Documentation:
 
